@@ -26,15 +26,15 @@
 // Flex sensor accurate calibration
 #define VCC_FLEX            3.3f
 #define R_FIXED             10000.0f
-#define MAX_FLEX_MM         50.0f
-#define FLEX_SAMPLES        10
+#define MAX_FLEX_MM         25.0f
+#define FLEX_SAMPLES        100
 
 // Calibration for sensor 1 (GPIO 39)
-#define R1_MIN              80000.0f
-#define R1_MAX              65000.0f
+#define R1_MIN              130000.0f
+#define R1_MAX              80000.0f
 
 // Calibration for sensor 2 (GPIO 36)
-#define R2_MIN              140000.0f
+#define R2_MIN              200000.0f
 #define R2_MAX              80000.0f
 
 extern Adafruit_SSD1306 display;
@@ -180,7 +180,7 @@ float getFlexResistance(int pin)
 
   for (int i = 0; i < FLEX_SAMPLES; i++) {
     totalADC += analogRead(pin);
-    delayMicroseconds(500);
+    delayMicroseconds(5);
   }
 
   float adcValue = totalADC / (float)FLEX_SAMPLES;

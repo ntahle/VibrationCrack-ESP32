@@ -33,7 +33,7 @@ const char* topic_vibration = "structural_monitor/data";
 
 /* THRESHOLDS */
 float vibrationThreshold = 1;  // Peak threshold (m/s²) - was 0.12g
-float flexThreshold = 5;
+float flexThreshold = 2;
 
 /* VARIABLES */
 float flex1_mm = 0;
