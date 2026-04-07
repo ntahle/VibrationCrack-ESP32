@@ -16,8 +16,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 #define LED 26
 
 /* WIFI */
-const char* ssid = "pengulang";
-const char* password = "1234abcd";
+const char* ssid = "RotiBakar2.4G";
+const char* password = "Rafi1688";
 
 /* MQTT - Node-RED Broker */
 const char* mqtt_server = "broker.hivemq.com";
