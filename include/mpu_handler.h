@@ -30,12 +30,12 @@
 #define FLEX_SAMPLES        100
 
 // Calibration for sensor 1 (GPIO 39)
-#define R1_MIN              130000.0f
-#define R1_MAX              80000.0f
+#define R1_MIN              230000.0f
+#define R1_MAX              100000.0f
 
 // Calibration for sensor 2 (GPIO 36)
 #define R2_MIN              200000.0f
-#define R2_MAX              80000.0f
+#define R2_MAX              95000.0f
 
 extern Adafruit_SSD1306 display;
 extern WiFiClient espClient;
