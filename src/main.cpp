@@ -16,8 +16,14 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 #define LED 26
 
 /* WIFI */
-const char* ssid = "RotiBakar2.4G";
-const char* password = "Rafi1688";
+const char* ssid = "fhae";
+const char* password = "adaeadam";
+// const char* ssid = "RotiBakar2.4G";
+// const char* password = "Rafi1688";
+// const char* ssid = "pengulang";
+// const char* password = "1234abcd";
+// const char* ssid = "tipon capiq";
+// const char* password = "Yoko123123";
 
 /* MQTT - Node-RED Broker */
 const char* mqtt_server = "broker.hivemq.com";
@@ -42,6 +48,7 @@ float expansionInc1 = 0;
 float expansionInc2 = 0;
 float prevFlex1 = 0;
 float prevFlex2 = 0;
+
 
 // MPU6050 advanced processing state
 float rms_buffer[RMS_WINDOW];
@@ -160,6 +167,7 @@ void loop()
 
       displayNormal(peakAccel);
     }
+
     char jsonPayload[256];
     snprintf(jsonPayload, sizeof(jsonPayload), 
       "{\"peakAccel\":%.4f,\"rmsAccel\":%.4f,\"flex1_mm\":%.2f,\"flex2_mm\":%.2f,\"prevFlex1\":%.2f,\"prevFlex2\":%.2f,\"expansion1\":%.2f,\"expansion2\":%.2f,\"alert\":%s}",

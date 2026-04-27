@@ -30,12 +30,12 @@
 #define FLEX_SAMPLES        100
 
 // Calibration for sensor 1 (GPIO 39)
-#define R1_MIN              230000.0f
-#define R1_MAX              100000.0f
+#define R1_MIN              600000.0f
+#define R1_MAX              150000.0f
 
 // Calibration for sensor 2 (GPIO 36)
-#define R2_MIN              200000.0f
-#define R2_MAX              95000.0f
+#define R2_MIN              160000.0f
+#define R2_MAX              42000.0f
 
 extern Adafruit_SSD1306 display;
 extern WiFiClient espClient;
@@ -289,11 +289,12 @@ void displayNormal(float vibration)
   display.println(" m/s2");
 
   display.print("Flex1:");
-  display.print(expansionInc1, 2);
+  display.print(flex1_mm, 2);
   display.println(" mm");
 
   display.print("Flex2:");
-  display.print(expansionInc2, 2);
+  display.print(flex2_mm, 2);
+
   display.println(" mm");
 
   display.println();
@@ -321,11 +322,11 @@ void displayAlert(float vibration)
   display.println(" m/s2");
 
   display.print("F1:");
-  display.print(expansionInc1, 2);
+  display.print(flex1_mm, 2);
   display.println(" mm");
 
   display.print("F2:");
-  display.print(expansionInc2, 2);
+  display.print(flex2_mm, 2);
   display.println(" mm");
 
   display.display();
